@@ -29,12 +29,12 @@ public class Calculator {
             case '*':
                 System.out.println("Результат =" + (operand1 * operand2));
                 break;
-            case '/': {
+            case '/':{
                 if (operand2 == 0) {
                     System.out.println("Делить на ноль нельзя!");
                 }
-              else {
-                System.out.println("Результат =" + (operand1 / operand2));}
+                else {
+                    System.out.println("Результат =" + (operand1 / operand2));}
             }
                 break;
             default:

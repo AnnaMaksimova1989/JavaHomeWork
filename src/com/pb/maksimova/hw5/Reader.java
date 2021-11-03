@@ -7,13 +7,21 @@ public class Reader {
   private String dateOfBirth;
   private String callNumber;
 
+public Reader() {}
+  public Reader(String name, String idCard, String fac, String birthday, String phone ) {
+  this.fullName = name;
+  this.numberLibraryCard = idCard;
+  this.faculty = fac;
+  this.dateOfBirth = birthday;
+  this.callNumber = phone;
+  }
 
   public void takeBook(int numBooks) {
     if (numBooks < 1)
       System.out.println("Читатель: " + fullName + " не брал книг в библиотеке");
     else if (numBooks == 1)
       System.out.println("Читатель: " + fullName + " взаял " + numBooks + " книгу");
-    else if (numBooks > 1 && numBooks < 5)
+    else if (numBooks < 5)
       System.out.println("Читатель: " + fullName + " взаял " + numBooks + " книги");
     else
       System.out.println("Читатель: " + fullName + " взаял " + numBooks + " книг");
@@ -32,15 +40,15 @@ public class Reader {
   }
 
 
-  public void takeBook(Book... b) {
-    for (int i = 0; i < b.length; i++) {
+  public void takeBook(Book... books) {
+    for (int i = 0; i < books.length; i++) {
       if (i == 0) {
         System.out.println("Читатель " + fullName + " взял: ");
-        System.out.println(b[i].toString());
-      } else if (i == (b.length - 1)) {
-        System.out.println(b[i].toString());
+        System.out.println(books[i].toString());
+      } else if (i == (books.length - 1)) {
+        System.out.println(books[i].toString());
       } else
-        System.out.println(b[i].toString());
+        System.out.println(books[i].toString());
     }
   }
 
@@ -49,7 +57,7 @@ public class Reader {
       System.out.println("Читатель: " + fullName + " не брал книг в библиотеке");
     else if (numBooks == 1)
       System.out.println("Читатель: " + fullName + " вернул " + numBooks + " книгу");
-    else if (numBooks > 1 && numBooks < 5)
+    else if (numBooks < 5)
       System.out.println("Читатель: " + fullName + " вернул " + numBooks + " книги");
     else
       System.out.println("Читатель: " + fullName + " вернул " + numBooks + " книг");
@@ -81,11 +89,7 @@ public class Reader {
 
   @Override
   public String toString() {
-    return ("ФИО:                        " + fullName +
-        "\nНомер читательского билета: " + numberLibraryCard +
-        "\nФакультет:                  " + faculty +
-        "\nДата рождения:              " + dateOfBirth +
-        "\nТелефон:                    " + callNumber + "\n");
+    return (fullName);
   }
 
   public String getFullName() {

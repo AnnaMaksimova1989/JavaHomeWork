@@ -5,14 +5,18 @@ public class Book {
   private java.lang.String author;
   private int yearPublication;
 
-  public Book(java.lang.String titleBook, java.lang.String author, int yearPublication) { /*compiled code */}
+  public Book(java.lang.String titleBook, java.lang.String author, int yearPublication) {
+    this.author = author;
+    this.titleBook = titleBook;
+    this.yearPublication = yearPublication;
+  }
 
-  public java.lang.String toString() { /*compiled code */}
+  public String toString() {
+    return this.titleBook + " (" + this.author + " " + this.yearPublication + ")";
+  }
 
-  public int getYearPublication() { /*compiled code */}
-
-  public java.lang.String getTitleBook() { /*compiled code */}
-
-  public java.lang.String getAuthor() { /*compiled code */}
-
+  public String getTitleBook() {
+    return titleBook;
+  }
 }
+
